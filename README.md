@@ -17,7 +17,7 @@ Tecnologias utilizadas:
 - Design 2D interativo
 - Elementos lúdicos e pedagógicos
 
-Finalidade Social
+Finalidade Social:
 
 Este projeto foi idealizado como ferramenta de apoio ao desenvolvimento infantil, especialmente em comunidades que buscam **acesso à educação tecnológica de forma inclusiva**.
 
