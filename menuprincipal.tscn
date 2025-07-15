@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://btxf64uwjgsrc"]
+
+[ext_resource type="Script" path="res://menuprincipal.gd" id="1_t0e2o"]
+[ext_resource type="Texture2D" uid="uid://dns42tpgfxadb" path="res://Assets/Sprites/menuav3 (2).png" id="2_njt8l"]
+[ext_resource type="AudioStream" uid="uid://bo013mawu0hn" path="res://Assets/Audios/musica_menu.mp3" id="3_js3ya"]
+
+[node name="menuprincipal" type="Node2D"]
+script = ExtResource("1_t0e2o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641.8, 365)
+scale = Vector2(1.24648, 0.466146)
+texture = ExtResource("2_njt8l")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 362.0
+offset_top = 587.0
+offset_right = 2226.0
+offset_bottom = 827.0
+scale = Vector2(0.3, 0.3)
+flat = true
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_js3ya")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

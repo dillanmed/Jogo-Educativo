@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgxb71qcyy8bu"]
+
+[ext_resource type="Script" path="res://prefase_1.gd" id="1_aynty"]
+[ext_resource type="Texture2D" uid="uid://b83lqmrc2ve7c" path="res://Assets/Sprites/backgroundprefase1.png" id="1_hwodh"]
+[ext_resource type="PackedScene" uid="uid://b1djr74uyf4ej" path="res://Cenas/player.tscn" id="2_3gm87"]
+[ext_resource type="Texture2D" uid="uid://b87hujagwshd8" path="res://Assets/Sprites/sara_idosa.png" id="4_tvjww"]
+[ext_resource type="AudioStream" uid="uid://dpglaumtb15uj" path="res://Assets/Audios/audio_prefase.mp3" id="5_syxr7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_766ym"]
+radius = 23.1948
+
+[node name="prefase1" type="Node2D"]
+script = ExtResource("1_aynty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(638, 362)
+scale = Vector2(0.831543, 0.69043)
+texture = ExtResource("1_hwodh")
+
+[node name="Rick" parent="." instance=ExtResource("2_3gm87")]
+position = Vector2(28.0001, 713)
+scale = Vector2(0.17, 0.17)
+
+[node name="saraidosa" type="Area2D" parent="."]
+position = Vector2(615, 660)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="saraidosa"]
+position = Vector2(1, -2)
+scale = Vector2(0.387597, 0.241803)
+texture = ExtResource("4_tvjww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saraidosa"]
+shape = SubResource("CircleShape2D_766ym")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_syxr7")
+volume_db = -30.292
+
+[connection signal="body_entered" from="saraidosa" to="saraidosa" method="_on_body_entered"]

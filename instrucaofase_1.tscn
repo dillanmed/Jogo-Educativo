@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmv50vy08vrdi"]
+
+[ext_resource type="Script" path="res://instrucaofase_1.gd" id="1_3mu7f"]
+[ext_resource type="Texture2D" uid="uid://8ndq5sc4k1fn" path="res://Assets/Sprites/Instrucao.png" id="1_d6l6l"]
+[ext_resource type="FontFile" uid="uid://bp325fyn1naup" path="res://Assets/Sprites/Material Freeway/PressStart2P-Regular.ttf" id="2_axua7"]
+[ext_resource type="AudioStream" uid="uid://cth82h5awsjw8" path="res://Assets/Audios/musica_instrucao.mp3" id="4_6oyby"]
+
+[node name="instrucaofase_1" type="Node2D"]
+script = ExtResource("1_3mu7f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(628.8, 363.3)
+scale = Vector2(1.25039, 0.474349)
+texture = ExtResource("1_d6l6l")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 398.0
+offset_top = 406.0
+offset_right = 869.0
+offset_bottom = 477.0
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 232.0
+offset_top = 190.0
+offset_right = 1035.0
+offset_bottom = 365.0
+theme_override_fonts/font = ExtResource("2_axua7")
+theme_override_font_sizes/font_size = 17
+text = "MISSÃO: Ajude a idosa Sarah a atravessar a rua"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+justification_flags = 131
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6oyby")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

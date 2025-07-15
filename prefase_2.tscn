@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0pqhfhqurpeg"]
+
+[ext_resource type="Texture2D" uid="uid://b83lqmrc2ve7c" path="res://Assets/Sprites/backgroundprefase1.png" id="1_kby4f"]
+[ext_resource type="Script" path="res://prefase_2.gd" id="1_njj1d"]
+[ext_resource type="PackedScene" uid="uid://b1djr74uyf4ej" path="res://Cenas/player.tscn" id="2_xnlfh"]
+[ext_resource type="Texture2D" uid="uid://dp330hx8ld4ty" path="res://Assets/Sprites/samuelunico.png" id="4_og2qs"]
+[ext_resource type="AudioStream" uid="uid://dpglaumtb15uj" path="res://Assets/Audios/audio_prefase.mp3" id="5_lfuvx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1x2ht"]
+radius = 21.0238
+
+[node name="prefase_2" type="Node2D"]
+script = ExtResource("1_njj1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(639, 363.5)
+scale = Vector2(0.834635, 0.698242)
+texture = ExtResource("1_kby4f")
+
+[node name="Rick" parent="." instance=ExtResource("2_xnlfh")]
+position = Vector2(1099, 453)
+scale = Vector2(0.17, 0.17)
+
+[node name="samuelcrianca" type="Area2D" parent="."]
+position = Vector2(600, 456)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="samuelcrianca"]
+position = Vector2(2.00002, -8)
+scale = Vector2(0.45122, 0.327778)
+texture = ExtResource("4_og2qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="samuelcrianca"]
+position = Vector2(3, -11)
+shape = SubResource("CircleShape2D_1x2ht")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lfuvx")
+volume_db = -28.272

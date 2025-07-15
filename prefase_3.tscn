@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://6ygukuawm77n"]
+
+[ext_resource type="Script" path="res://prefase_3.gd" id="1_1rchb"]
+[ext_resource type="Texture2D" uid="uid://bu4xjs2c023r4" path="res://Assets/Sprites/backgroundprefase3.png" id="2_npian"]
+[ext_resource type="PackedScene" uid="uid://b1djr74uyf4ej" path="res://Cenas/player.tscn" id="3_ndcab"]
+[ext_resource type="Texture2D" uid="uid://bmn4h66xfrdo2" path="res://Assets/Sprites/gabrielunico.png" id="4_rx0li"]
+[ext_resource type="AudioStream" uid="uid://dpglaumtb15uj" path="res://Assets/Audios/audio_prefase.mp3" id="5_u7wyv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x7nu"]
+radius = 26.0
+
+[node name="prefase_3" type="Node2D"]
+script = ExtResource("1_1rchb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(644, 360.5)
+scale = Vector2(1.24609, 0.700195)
+texture = ExtResource("2_npian")
+
+[node name="Rick" parent="." instance=ExtResource("3_ndcab")]
+position = Vector2(168, 743)
+scale = Vector2(0.17, 0.17)
+
+[node name="gabrielcacador" type="Area2D" parent="."]
+position = Vector2(989, 638)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="gabrielcacador"]
+position = Vector2(-4.99998, 15)
+scale = Vector2(0.474074, 0.328283)
+texture = ExtResource("4_rx0li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gabrielcacador"]
+position = Vector2(-9, 25)
+shape = SubResource("CircleShape2D_8x7nu")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_u7wyv")
+volume_db = -28.272

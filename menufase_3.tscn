@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://q3ohptgxotm1"]
+
+[ext_resource type="Texture2D" uid="uid://d34e7ufkkx46v" path="res://Assets/Sprites/menufase3.png" id="1_enyx0"]
+[ext_resource type="Script" uid="uid://gwvyleheyalp" path="res://menufase_3.gd" id="1_gp6lt"]
+[ext_resource type="Texture2D" uid="uid://cg2n3fyombtmi" path="res://Assets/Sprites/botaojogar (1).png" id="2_uwp7v"]
+
+[node name="menufase_3" type="Node2D"]
+script = ExtResource("1_gp6lt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(637, 358.5)
+scale = Vector2(1.25586, 0.696289)
+texture = ExtResource("1_enyx0")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 509.0
+offset_top = 171.0
+offset_right = 1541.0
+offset_bottom = 1203.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("2_uwp7v")
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

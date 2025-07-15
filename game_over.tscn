@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsrnolpj70iw7"]
+
+[sub_resource type="GDScript" id="GDScript_xapjj"]
+script/source = "extends CanvasLayer
+
+
+signal reiniciar
+
+func _ready() -> void:
+	$GameOverAudio.play()
+	
+func _on_jogar_novamente_pressed() -> void:
+	return
+"
+
+[node name="GameOver" type="CanvasLayer"]
+script = SubResource("GDScript_xapjj")
+
+[node name="TelaGameOver" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Mensagem" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="JogarNovamente" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="GameOverAudio" type="AudioStreamPlayer2D" parent="."]

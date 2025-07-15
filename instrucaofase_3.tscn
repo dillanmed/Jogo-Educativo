@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://8jcimnpb3jb1"]
+
+[ext_resource type="Script" path="res://instrucaofase_3.gd" id="1_3a6qs"]
+[ext_resource type="Texture2D" uid="uid://8ndq5sc4k1fn" path="res://Assets/Sprites/Instrucao.png" id="1_kabnn"]
+[ext_resource type="FontFile" uid="uid://bp325fyn1naup" path="res://Assets/Sprites/Material Freeway/PressStart2P-Regular.ttf" id="2_a43nq"]
+[ext_resource type="AudioStream" uid="uid://cth82h5awsjw8" path="res://Assets/Audios/musica_instrucao.mp3" id="4_abgqo"]
+
+[node name="instrucaofase_3" type="Node2D"]
+script = ExtResource("1_3a6qs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(638.5, 363.5)
+scale = Vector2(1.24512, 0.461589)
+texture = ExtResource("1_kabnn")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 410.0
+offset_top = 413.0
+offset_right = 859.0
+offset_bottom = 478.0
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 249.0
+offset_top = 191.0
+offset_right = 1036.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("2_a43nq")
+theme_override_font_sizes/font_size = 17
+text = "MISSÃO: Devolva a mochila perdida ao caçador 
+Gabriel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+justification_flags = 131
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_abgqo")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
